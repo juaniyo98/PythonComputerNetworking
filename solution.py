@@ -10,8 +10,8 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
    # Create socket called clientSocket and establish a TCP connection with mailserver and port
 
    # Fill in start
-   serverName = 'nyu.edu'
-   serverPort = 25
+   
+   
    clientSocket=socket(AF_INET,SOCK_STREAM)
    clientSocket.connect((serverName,serverPort))
 
@@ -58,7 +58,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
    clientSocket.send(DataCommand.encode())
    recv4 = clientSocket.recv(1024).decode()
    print(recv4)
-   if recv4[:3] != '250':
+   if recv4[:3] != '354':
        print('250 reply not received from server.')
    # Fill in end
 
