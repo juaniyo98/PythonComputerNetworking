@@ -13,7 +13,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
    
    
    clientSocket=socket(AF_INET,SOCK_STREAM)
-   clientSocket.connect((serverName,serverPort))
+   clientSocket.connect((port,mailserver))
 
    # Fill in end
 
