@@ -57,7 +57,7 @@ def build_packet():
         myChecksum = htons(myChecksum)
 
 
-    header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, myChecksum, ID, 1)
+    header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, myChecksum, myID, 1)
     #Fill in end
 
     # So the function ending should look like this
@@ -134,7 +134,7 @@ def get_route(hostname):
                     #You should add your responses to your lists here
                     time = str(round((timeReceived - t) * 1000))
                     
-                    packetInfo = [str(ttl), time, str(addr[0]), host]
+                    packetInfo = [str(ttl), time, str(addr[0]), host1]
                    
                     #You should add your responses to your lists here
                     tracelist1.append(packetInfo)
@@ -147,7 +147,7 @@ def get_route(hostname):
                     #You should add your responses to your lists here 
                     time = str(round((timeReceived - t) * 1000))
                     
-                    packetInfo = [str(ttl), time, str(addr[0]), host]
+                    packetInfo = [str(ttl), time, str(addr[0]), host1]
                  
                     #You should add your responses to your lists here 
                     tracelist1.append(packetInfo)
@@ -160,7 +160,7 @@ def get_route(hostname):
                     #You should add your responses to your lists here and return your list if your destination IP is met
                     time = str(round((timeReceived - t) * 1000))
                     #timeMS = str(round(timeSent * 1000)) + "ms"
-                    packetInfo = [str(ttl), time, str(addr[0]), host]
+                    packetInfo = [str(ttl), time, str(addr[0]), host1]
                     #print (packetInfo)
                     #You should add your responses to your lists here and return your list if your destination IP is met
                     tracelist1.append(packetInfo)
