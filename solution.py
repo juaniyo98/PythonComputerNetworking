@@ -132,9 +132,9 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 +bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here
-                    time = str(round((timeReceived - t) * 1000))
+                    time1 = str(round((timeReceived - t) * 1000))
                     
-                    packetInfo = [str(ttl), time, str(addr[0]), host1]
+                    packetInfo = [str(ttl), time1, str(addr[0]), host1]
                    
                     #You should add your responses to your lists here
                     tracelist1.append(packetInfo)
@@ -145,9 +145,9 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here 
-                    time = str(round((timeReceived - t) * 1000))
+                    time1 = str(round((timeReceived - t) * 1000))
                     
-                    packetInfo = [str(ttl), time, str(addr[0]), host1]
+                    packetInfo = [str(ttl), time1, str(addr[0]), host1]
                  
                     #You should add your responses to your lists here 
                     tracelist1.append(packetInfo)
@@ -158,10 +158,10 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here and return your list if your destination IP is met
-                    time = str(round((timeReceived - t) * 1000))
-                    #timeMS = str(round(timeSent * 1000)) + "ms"
-                    packetInfo = [str(ttl), time, str(addr[0]), host1]
-                    #print (packetInfo)
+                    time1 = str(round((timeReceived - t) * 1000))
+                  
+                    packetInfo = [str(ttl), time1, str(addr[0]), host1]
+                    
                     #You should add your responses to your lists here and return your list if your destination IP is met
                     tracelist1.append(packetInfo)
                     tracelist2.append(tracelist1[-1])
