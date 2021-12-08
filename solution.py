@@ -39,6 +39,7 @@ def checksum(string):
 
 def build_packet():
     #Fill in start
+    myID = os.getpid() & 0xFFFF
     myChecksum = 0
     # Make a dummy header with a 0 checksum
     # struct -- Interpret strings as packed binary data
