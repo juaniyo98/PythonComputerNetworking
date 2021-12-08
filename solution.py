@@ -6,8 +6,7 @@ import time
 import select
 import binascii
 import statistics
-import statistics.stdev
-import statistics.mean
+
 
 # Should use stdev
 
@@ -61,6 +60,9 @@ def receiveOnePing(mySocket, ID, timeout, destAddr):
             bytesInDouble = struct.calcsize("d")
             timeSent = struct.unpack("d", recPacket[28:28 + bytesInDouble])[0]
             return timeReceived - timeSent
+
+        rtt = timeout 
+        rtt_min = min(timeout)
 
         # Fill in end
         timeLeft = timeLeft - howLongInSelect
@@ -120,7 +122,7 @@ def ping(host, timeout=1):
     #vars = [str(round(packet_min, 2)), str(round(packet_avg, 2)), str(round(packet_max, 2)),str(round(stdev(stdev_var), 2))]
     # Send ping requests to a server separated by approximately one second
     list = []*1000
-    
+
     for i in range(0,4):
         delay = doOnePing(dest, timeout)
         print(delay)
